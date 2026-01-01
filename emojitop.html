@@ -105,15 +105,36 @@
       color: var(--muted);
       font-size: 0.85rem;
     }
+    
+    .btn {
+      display: inline-block;
+      padding: 12px 24px;
+      background: #961ddd;
+      color: white;
+      font-size: 16px;
+      font-weight: 600;
+      border-radius: 999px;
+      transition: 
+        background 0.25s ease,
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+    }
+
+    .btn:hover {
+      background: #bf48cf;
+      transform: translateY(-3px);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    }
   </style>
 </head>
 <body>
   <main>
     <div class="card">
-      <h2>Yikkes Wrapped 2025</h2>
+      <h1>Yikkes Wrapped 2025</h1>
+      <button class="btn" onclick="window.location.href='index.html'">Message Leaderboard</button>
+      <button class="btn" onclick="window.location.href='emojitop.html'">Emoji Leaderboard</button>
       <p class="muted">
-        <button onclick="window.location.href='index.html'">Message Leaderboard</button>
-        <button onclick="window.location.href='emojitop.html'">Emoji Leaderboard</button>
+        <h2>Emoji Leaderboard</h2>
       </p>
       <div class="table-container">
         <table id="data-table"></table>
