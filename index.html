@@ -125,6 +125,47 @@
       transform: translateY(-3px);
       box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
     }
+
+    #backToTop {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+
+      width: 48px;
+      height: 48px;
+
+      border-radius: 999px;
+      border: none;
+
+      background: #9333ea;
+      color: white;
+      font-size: 20px;
+      font-weight: bold;
+
+      cursor: pointer;
+
+      opacity: 0;
+      pointer-events: none;
+      transform: translateY(10px);
+
+      transition:
+        opacity 0.3s ease,
+        transform 0.3s ease,
+        background 0.2s ease,
+        box-shadow 0.2s ease;
+    }
+
+    #backToTop:hover {
+      background: #7e22ce;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+    }
+
+    #backToTop.show {
+      opacity: 1;
+      pointer-events: auto;
+      transform: translateY(0);
+    }
+
   </style>
 </head>
 <body>
@@ -142,6 +183,8 @@
       </div>
     </div>
   </main>
+
+  <button id="backToTop" aria-label="Back to top">↑</button>
 
   <footer>
   © Yikkes Inc. 2026
@@ -181,6 +224,23 @@
 
     loadCSV("data/leaderboard.csv").then(data => {
       renderTable(document.getElementById("data-table"), data);
+    });
+
+    const backToTop = document.getElementById("backToTop");
+
+    window.addEventListener("scroll", () => {
+      if (window.scrollY > 300) {
+        backToTop.classList.add("show");
+      } else {
+        backToTop.classList.remove("show");
+      }
+    });
+
+    backToTop.addEventListener("click", () => {
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+      });
     });
   </script>
 </body>
