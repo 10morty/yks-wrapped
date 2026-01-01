@@ -27,7 +27,8 @@
 
     header {
       padding: 1.5rem 2rem;
-      border-bottom: 1px solid #ffffff;
+      background: #373638;
+      border-bottom: 3px solid #312e2e;
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -107,12 +108,13 @@
   </style>
 </head>
 <body>
-
-
   <main>
     <div class="card">
       <h2>Yikkes Wrapped 2025</h2>
-      <p class="muted">Leaderboard</p>
+      <p class="muted">
+        <button onclick="window.location.href='index.html'">Message Leaderboard</button>
+        <button onclick="window.location.href='emojitop.html'">Emoji Leaderboard</button>
+      </p>
       <div class="table-container">
         <table id="data-table"></table>
       </div>
